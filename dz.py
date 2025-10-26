@@ -1,0 +1,50 @@
+from PyQt6 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(671, 146)
+        self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.horizontalScrollBar = QtWidgets.QScrollBar(parent=self.centralwidget)
+        self.horizontalScrollBar.setGeometry(QtCore.QRect(80, 10, 160, 16))
+        self.horizontalScrollBar.setMinimum(2)
+        self.horizontalScrollBar.setMaximum(50)
+        self.horizontalScrollBar.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.horizontalScrollBar.setObjectName("horizontalScrollBar")
+        self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(0, 10, 91, 16))
+        self.label_2.setObjectName("label_2")
+        self.pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(0, 70, 131, 23))
+        self.pushButton.setObjectName("pushButton")
+        self.label = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(0, 40, 551, 16))
+        self.label.setObjectName("label")
+        self.label_3 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(500, 50, 700, 16))
+        self.label_3.setObjectName("label_3")
+        self.pushButton_2 = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButton_2.setGeometry(QtCore.QRect(540, 40, 121, 23))
+        self.pushButton_2.setObjectName("pushButton_2")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 671, 21))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "Generator"))
+        self.label_2.setText(_translate("MainWindow", "Длина пароля:"))
+        self.label_3.setText(_translate("MainWindow", "2"))
+        self.pushButton.setText(_translate("MainWindow", "Сгенирировать пароль"))
+        self.label.setText(_translate("MainWindow", "Пароль:"))
+        self.pushButton_2.setText(_translate("MainWindow", "Скопировать пароль"))
