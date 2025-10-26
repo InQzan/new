@@ -1,6 +1,6 @@
-
 from dz import Ui_MainWindow
 from random import *
+import pyperclip
 from PyQt6.QtCore import QDate
 from PyQt6.QtWidgets import QApplication,QMainWindow, QTableWidgetItem
 
@@ -13,7 +13,7 @@ a=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
             '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[',
             ']', '^', '_', '`', '{', '|', '}', '~']
 
-b = ""
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -21,17 +21,23 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.height = 2
+        self.b = ""
         self.ui.pushButton_2.clicked.connect(self.degenerat)
+        self.ui.pushButton.clicked.connect(self.copy)
         self.ui.horizontalSlider.valueChanged.connect(self.change_slider)
 
 
 
     def degenerat(self):
         self.ui.label_3.setText("Пароль:")
-        b = ""
+        self.b = ""
         for i in range(self.height):
-            b += choice(a)
-        self.ui.label_3.setText(f"Пароль:{b}")
+            self.b += choice(a)
+        self.ui.label_3.setText(f"Пароль:{self.b}")
+
+
+    def copy(self):
+        pyperclip.copy(self.b)
 
 
     def change_slider(self, value):
